@@ -1,0 +1,83 @@
+<!-- <div style="height: '300px'" className='container mt-5 w-100'>
+    <div className="d-flex justify-content-between">
+      <div style="width: '400px'" className="intro">
+        <h5><i className="fa-solid fa-music me-2"></i>Style Guru</h5>
+        <p>Designed and built with all the love in the world by the Bootstrap team with
+          the help of our contributors.
+        </p>
+        <p>Code licensed MIT,docs CC BY 3.O.</p>
+        <p>Currently v5.3.2.</p>
+      </div>
+      <div className="links d-flex flex-column">
+        <h5>Links</h5>
+        <a routerLink="home" style=" textdecoration: 'none', color: 'white' >Home</a>
+        <a routerLink="/wishlist" style=" textDecoration: 'none', color: 'white' ">Wishlist</a>
+        <a routerLink="/cart" style=" textDecoration: 'none', color: 'white' ">Cart</a>
+      </div>
+      <div className="guides  d-flex flex-column">
+        <h5>Guides</h5>
+        <a href="https://react.dev/" style=" textDecoration: 'none', color: 'white' " target='_blank'>React</a>
+        <a href="https://react-bootstrap.github.io/" style=" textDecoration: 'none', color: 'white' " target='_blank'>Bootstrap</a>
+        <a href="https://reactrouter.com/en/main" style="textDecoration: 'none', color: 'white' " target='_blank'>React Router</a>
+
+      </div>
+      <div className="contact">
+        <h5>Contact Us</h5>
+        <div className="d-flex">
+          <input placeholder='Enter your email here' type="text" className="form-control" />
+          <button className="btn btn-info ms-2"><i className="fa-solid fa-arrow-right"></i></button>
+        </div>
+        <div className="icons d-flex justify-content-between mt-3">
+          <a href="" style=" textDecoration: 'none', color: 'white' " target='_blank'><i className="fa-brands fa-twitter"></i></a>
+          <a href="" style=" textDecoration: 'none', color: 'white' " target='_blank'><i className="fa-brands fa-instagram"></i></a>
+          <a href="" style={{ textDecoration: 'none', color: 'white' }} target='_blank'><i className="fa-brands fa-facebook"></i></a>
+          <a href="" style={{ textDecoration: 'none', color: 'white' }} target='_blank'><i className="fa-brands fa-linkedin"></i></a>
+          <a href="" style={{ textDecoration: 'none', color: 'white' }} target='_blank'><i className="fa-brands fa-github"></i></a>
+          <a href="" style={{ textDecoration: 'none', color: 'white' }} target='_blank'><i className="fa-solid fa-phone"></i></a>
+        </div>
+      </div>
+    </div>
+    <p className='text-center mt-3'>Copyright &copy; 2024 Media Player.Built with React.</p>
+  </div> -->
+
+  <div class="container-fluid mt-5 w-100 bg-black pt-3" [ngStyle]="{height: '300px'}">
+    <div class="d-flex justify-content-between text-white">
+      <div class="intro" [ngStyle]="{width: '400px'}">
+        <h5><i class="fa-solid fa-music me-2"></i>Style Guru</h5>
+        <p>Designed and built with all the love in the world by the Bootstrap team with the help of our contributors.</p>
+        <p>Code licensed MIT, docs CC BY 3.0.</p>
+        <p>Currently v5.3.2.</p>
+      </div>
+      <div class="links d-flex flex-column">
+        <h5>Links</h5>
+        <a routerLink="/home" [ngStyle]="{textDecoration: 'none', color: 'white'}">Home</a>
+        <a routerLink="/wishlist" [ngStyle]="{textDecoration: 'none', color: 'white'}">Wishlist</a>
+        <a routerLink="/cart" [ngStyle]="{textDecoration: 'none', color: 'white'}">Cart</a>
+      </div>
+      <div class="guides d-flex flex-column">
+        <h5>Registered Address</h5>
+        <!-- <a href="https://react.dev/" [ngStyle]="{textDecoration: 'none', color: 'white'}" target="_blank">React</a>
+        <a href="https://react-bootstrap.github.io/" [ngStyle]="{textDecoration: 'none', color: 'white'}" target="_blank">Bootstrap</a>
+        <a href="https://reactrouter.com/en/main" [ngStyle]="{textDecoration: 'none', color: 'white'}" target="_blank">React Router</a> -->
+        <h6>Manhattan PO</h6>
+        <h6>Near Center Square</h6>
+        <h6>679086</h6>
+      </div>
+      <div class="contact">
+        <h5>Contact Us</h5>
+        <div class="d-flex">
+          <input placeholder="Enter your email here" type="text" class="form-control" />
+          <button class="btn btn-info ms-2"><i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+        <div class="icons d-flex justify-content-between mt-3">
+          <a href="" [ngStyle]="{textDecoration: 'none', color: 'white'}" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+          <a href="" [ngStyle]="{textDecoration: 'none', color: 'white'}" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+          <a href="" [ngStyle]="{textDecoration: 'none', color: 'white'}" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+          <a href="" [ngStyle]="{textDecoration: 'none', color: 'white'}" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="" [ngStyle]="{textDecoration: 'none', color: 'white'}" target="_blank"><i class="fa-brands fa-github"></i></a>
+          <a href="" [ngStyle]="{textDecoration: 'none', color: 'white'}" target="_blank"><i class="fa-solid fa-phone"></i></a>
+        </div>
+      </div>
+    </div>
+    <p class="text-center mt-3 text-white">Copyright &copy; 2024 Style Guru. Built with Angular.</p>
+  </div>

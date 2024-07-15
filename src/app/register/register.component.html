@@ -1,0 +1,20 @@
+<div class="parent-container">
+    <div class="centered-container">
+    <div class="partition1">
+        <img src="https://cdni.iconscout.com/illustration/premium/thumb/app-login-5948720-4922487.png?f=webp" class="img-fluid" alt="">
+    </div>
+    <div class="partition2 p-3 border rounded">
+     <h3 class="text-white mt-3 mb-3">Registeration Form</h3>
+     <form (ngSubmit)="register()" [formGroup]="registerForm">
+        <input name="username" formControlName="username" type="text" class="form-control mb-3" placeholder="Username" style="height: 50px;" >
+        <div *ngIf="registerForm.get('username')?.errors && registerForm.get('username')?.touched" class="fw-bolder text-danger mb-2">*Invalid Username</div>
+     <input name="email" formControlName="email" type="text" class="form-control " placeholder="Email address" style="height: 50px;" >
+     <div *ngIf="registerForm.get('email')?.errors && registerForm.get('email')?.touched" class="fw-bolder text-danger mb-2">*Invalid email</div>
+     <input name="password" formControlName="password" type="password" class="form-control mt-4" placeholder="Password" style="height: 50px;">
+     <div *ngIf="registerForm.get('password')?.errors && registerForm.get('password')?.touched" class="fw-bolder text-danger mb-2">*Invalid password</div>
+     <button class="btn bg-warning mt-3 w-100 text-white" style="height: 50px;" type="submit">Register</button>
+     <p class="mt-2 text-white">Already registered?Click to <a routerLink="/login">Login</a></p>
+     </form>
+    </div>
+    </div>
+    </div>

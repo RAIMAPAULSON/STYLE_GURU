@@ -1,0 +1,43 @@
+<app-header></app-header>
+<div>
+    <!-- Section-->
+    <section class="py-5">
+        <div class="container px-4 px-lg-5 mt-5">
+            <div *ngIf="allProducts.length>0">
+                <h2 class="mt-5 text-primary">Your Wishlist...</h2>
+                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                    <div class="col mb-5" *ngFor="let product of allProducts">
+                        <div class="card h-100">
+                             <!-- Product image-->
+                        <img height="250px" routerLink="/{{product.id}}/view" style="cursor:pointer;"
+                        class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" [src]="product.image" alt="..." />
+                       <!-- Product details-->
+                       <div class="card-body p-4">
+                           <div class="text-center">
+                               <!-- Product name-->
+                               <h5 class="fw-bolder">{{product.title.slice(0,20)}}...</h5>
+                               <!-- Product price-->
+                               ${{product.price}}
+                           </div>
+                       </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="d-flex justify-content-between">
+                                    <button (click)="removeItem(product._id)" class="btn"><i class="fa-solid fa-heart-circle-xmark text-danger"></i></button>
+                                    <button class="btn"><i class="fa-solid fa-cart-plus text-success"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="allProducts.length==0">
+                <div class="d-flex justify-content-center align-items-center flex-column">
+                 <img width="400px;" src="https://cdni.iconscout.com/illustration/premium/thumb/empty-cart-5521508-4610092.png" alt="">
+                 <h1 class="text-primary">Your Wislist is Empty</h1>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</div>

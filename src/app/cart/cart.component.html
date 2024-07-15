@@ -1,0 +1,50 @@
+<app-header></app-header>
+<section class="py-5 container">
+<h2 class="mt-5">Cart Summary</h2>
+<div>
+<div class="row">
+<div class="col-lg-8">
+<table class="table">
+<thead>
+    <tr>
+     <th>#</th>
+     <th>Item Name</th>
+     <th>Image</th>
+     <th>Quantity</th>
+     <th>Price</th>
+     <th>...</th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+        <td>1</td>
+        <td>Silicon Power 250GB</td>
+        <td><img height="50px" width="50px" 
+        src="https://media.istockphoto.com/id/488160041/photo/mens-shirt.jpg?s=612x612&w=0&k=20&c=xVZjKAUJecIpYc_fKRz_EB8HuRmXCOOPOtZ-ST6eFvQ=" alt=""></td>
+        <td><div class="d-flex">
+            <button class="btn fw-bolder">-</button>
+            <input value="10" style="width: 3rem;" type="text" class="form-control" readonly>
+            <button class="btn fw-bolder">+</button>
+        </div></td>
+        <td>$218</td>
+        <td><i class="fa-solid fa-trash text-danger"></i></td>
+    </tr>
+</tbody>
+</table>
+<div class="float-end">
+    <button class="btn btn-danger">EMPTY CART</button>
+    <button class="btn btn-primary ms-2">SHOP MORE</button>
+</div>
+</div>
+<div class="col-lg-4">
+    <div class="border rounded p-3">
+        <h3>Cart Total : <span class="fw-bolder text-danger">$400</span></h3>
+        <hr>
+        <div class="d-grid">
+        <button class=" btn bg-success text-white">Checkout</button>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</section>
