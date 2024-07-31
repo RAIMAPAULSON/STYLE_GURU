@@ -10,7 +10,7 @@
                         <div class="card h-100">
                              <!-- Product image-->
                         <img height="250px" routerLink="/{{product.id}}/view" style="cursor:pointer;"
-                        class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" [src]="product.image" alt="..." />
+                        class="card-img-top" [src]="product.image" alt="..." />
                        <!-- Product details-->
                        <div class="card-body p-4">
                            <div class="text-center">
@@ -24,7 +24,7 @@
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                                 <div class="d-flex justify-content-between">
                                     <button (click)="removeItem(product._id)" class="btn"><i class="fa-solid fa-heart-circle-xmark text-danger"></i></button>
-                                    <button class="btn"><i class="fa-solid fa-cart-plus text-success"></i></button>
+                                    <button (click)="addToCart(product)" class="btn"><i class="fa-solid fa-cart-plus text-success"></i></button>
                                 </div>
                             </div>
                         </div>

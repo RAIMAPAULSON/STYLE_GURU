@@ -32,6 +32,7 @@ login(){
       sessionStorage.setItem("user",JSON.stringify(result.user))
       sessionStorage.setItem("token",result.token)
       this.api.getWishlistCount()
+      this.api.getCartCount()
       this.router.navigateByUrl("")
     },
     error:(reason:any)=>{

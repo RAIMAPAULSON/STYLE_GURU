@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ApiService } from '../services/api.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -7,10 +8,12 @@ import { ApiService } from '../services/api.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+ @Input() dataFromParent:boolean = false
   username:any = ""
   wishlistCount:number = 0
+  cartCount:number = 0
 
-  constructor(private api:ApiService){}
+  constructor(private api:ApiService,private router:Router){}
 
   ngOnInit(): void {
     if(sessionStorage.getItem("user")){
@@ -19,9 +22,25 @@ export class HeaderComponent implements OnInit {
       this.api.wishlistCount.subscribe((result:any)=>{
         this.wishlistCount = result
       })
+      this.api.cartCount.subscribe((result:any)=>{
+        this.cartCount = result
+      })
+
     }else{
       this.username = ""
     }
+  }
+
+  getSearchKey(event:any){
+    this.api.searchKey.next(event.target.value)
+  }
+
+  logout(){
+    sessionStorage.clear()
+    this.username = ""
+    this.wishlistCount = 0
+    this.cartCount = 0 
+    this.router.navigateByUrl('/')
   }
 
 

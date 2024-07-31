@@ -6,12 +6,15 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class ApiService {
-  
+
+  searchKey = new BehaviorSubject("")
+  cartCount = new BehaviorSubject(0)
   wishlistCount = new BehaviorSubject(0)
-  server_url = "http://localhost:3000"
+  server_url = "https://styleguru-server-1.onrender.com"
   constructor(private http:HttpClient) {
     if(sessionStorage.getItem("token")){
       this.getWishlistCount()
+      this.getCartCount()
     }
    }
  
@@ -60,6 +63,44 @@ export class ApiService {
     return this.http.delete(`${this.server_url}/wishlist/${id}/remove`,this.appendToken())
 
   }
+
+  addToCartAPI(product:any){
+    return this.http.post(`${this.server_url}/addToCart`,product,this.appendToken())
+
+  }
+
+  getCartAPI(){
+    return this.http.get(`${this.server_url}/get-cart`,this.appendToken())
+
+  }
+  getCartCount(){
+    this.getCartAPI().subscribe((result:any)=>{
+      // here result is array
+      this.cartCount.next(result.length)
+    })
+  }
+
+  removeCartAPI(id:any){
+    return this.http.delete(`${this.server_url}/cart/${id}/remove`,this.appendToken())
+
+  }
+
+  incrementCartAPI(id:any){
+    return this.http.get(`${this.server_url}/cart/${id}/increment`,this.appendToken())
+
+  }
+
+  decrementCartAPI(id:any){
+    return this.http.get(`${this.server_url}/cart/${id}/decrement`,this.appendToken())
+
+  }
+
+  emptyCartAPI(){
+    return this.http.delete(`${this.server_url}/empty-cart
+      `,this.appendToken())
+
+  }
+
 
 
 

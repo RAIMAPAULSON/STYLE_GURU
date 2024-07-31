@@ -9,7 +9,10 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class HomeComponent implements OnInit {
   
+  insideHome:boolean = true
   allProducts:any = []
+  searchKey:string = ""
+
 
   constructor(private api:ApiService,private toastr:ToastrService){}
 
@@ -17,6 +20,9 @@ export class HomeComponent implements OnInit {
     this.api.getAllProductsAPI().subscribe((result:any)=>{
       this.allProducts = result
       console.log(this.allProducts);
+    })
+    this.api.searchKey.subscribe((res:any)=>{
+      this.searchKey = res
     })
   }
 
@@ -42,6 +48,16 @@ export class HomeComponent implements OnInit {
   addToCart(product:any){
     if(sessionStorage.getItem("token")){
       //  addToCart
+      product.quantity = 1
+      this.api.addToCartAPI(product).subscribe({
+        next:(result:any)=>{
+          this.toastr.success(result)
+          this.api.getCartCount()
+        },
+        error:(reason:any)=>{
+          this.toastr.warning(reason.error)
+        }
+      })
       }else{
        this.toastr.info("Please login!!!")
       }

@@ -7,6 +7,7 @@ import { ViewComponent } from './view/view.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
 import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { authGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   // http://localhost:4200/
@@ -18,11 +19,11 @@ const routes: Routes = [
   // http://localhost:4200/10/view
   { path:':id/view',component:ViewComponent},
   // http://localhost:4200/wishlist
-  { path:'wishlist',component:WishlistComponent},
+  { path:'wishlist',canActivate:[authGuard],component:WishlistComponent},
   // http://localhost:4200/cart
-  { path:'cart',component:CartComponent},
+  { path:'cart',canActivate:[authGuard],component:CartComponent},
   // http://localhost:4200/checkout
-  { path:'checkout',component:CheckoutComponent}
+  { path:'checkout',canActivate:[authGuard],component:CheckoutComponent}
 
 ];
 

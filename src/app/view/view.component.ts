@@ -47,5 +47,22 @@ export class ViewComponent implements OnInit{
     }
 
   }
+  addToCart(product:any){
+    if(sessionStorage.getItem("token")){
+      //  addToCart
+      product.quantity = 1
+      this.api.addToCartAPI(product).subscribe({
+        next:(result:any)=>{
+          this.toastr.success(result)
+          this.api.getCartCount()
+        },
+        error:(reason:any)=>{
+          this.toastr.warning(reason.error)
+        }
+      })
+      }else{
+       this.toastr.info("Please login!!!")
+      }
+  }
 
 }

@@ -767,4 +767,15 @@ and before using it in another file it has to import
                     -ngAfterViewChceked()
                     -ngOnDestroy()
                 -ActivatedRoute Class : used to provide details regarding route associated with a component
-                -BehaviorSubject : it immediately receives the current value where we used the subject
+                -Pipes: Use pipes to transform strings, currency amounts, dates, and other data for display.
+                        Pipes are simple functions to use in templates to accept an input value and return a
+                        transformed value.
+                    -syntax : use pipe in template - transform-value | pipe-name [:options]
+                    -generate user-defined pipes : ng g p pipe-folder/pipe-name
+                -Download as pdf :  npm install jspdf jspdf-autotable
+                -Pagination in angular : npm i ngx-pagination
+
+                -BehaviorSubject : it immediately receives the current value where we used the subject in our app,
+                requires an initial value upon instantiation.to access value from a BehaviorSubject it has to subscribe.
+                next method in BehaviorSubject is used to assign a value to BehaviorSubject,to create BehaviorSubject we
+                have to create object for BehaviorSubject class
